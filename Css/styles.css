@@ -1,0 +1,253 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/*hamburger */
+.hamburger {
+  position: fixed;
+  top: 20px;
+  z-index: 999;
+  display: block;
+  width: 32px;
+  height: 32px;
+  margin-left: 15px;
+  background: transparent;
+  border:none;
+}
+
+.hamburger:hover, .hamburger:focus, .hamburger:active {
+  outline: none;
+}
+
+.hamburger .is-closed::before {
+  content: '';
+  display: block;
+  width: 100px;
+  font-size: 14px;
+  color: black;
+  line-height: 32px;
+  text-align: center;
+  opacity: 0;
+  -webkit-transform: translate3d(0,0,0);
+  -webkit-transition: all .35s ease-in-out;
+}
+
+/* home background images */
+.bk-img {
+  height: 100px;
+  width: 100vw;
+}
+
+.bk-img img {
+  height: 60%;
+  width: 100%;
+  left: 0;
+  object-fit: cover;
+  object-position: center;
+  top: 0;
+
+}
+
+.bk-img img {
+  position: absolute;
+  transition: opacity 1s;
+  opacity: 0;
+}
+
+.bk-img img:first-child {
+  z-index: 2;
+  opacity: 1;
+}
+
+.bk-img img:last-child {
+  z-index: 1;
+  opacity: 1;
+}
+
+/* Image and title container */
+
+.title-container {
+  position: absolute;
+  z-index: 3;
+}
+
+/* Button */
+
+.title-bt {
+  font-family: 'Permanent Marker', cursive;
+  letter-spacing: 5px;
+  background-color: #00bbf0 !important;
+  border-color: #00bbf0 !important;
+  text-align: center;
+  position: fixed;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -15%);
+}
+
+#title {
+  font-family: 'Permanent Marker', cursive;
+  color: white;
+  text-align: center;
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, 20%);
+}
+
+.underlined, .underlined-2 {
+  text-decoration: none;
+}
+
+.underlined:after {
+  content: '';
+  position: absolute;
+  bottom: 35px;
+  left: 150px;
+  height: 7px;
+  width: 45%;
+  border: solid 8px #00bbf0;
+  border-color: #00bbf0 transparent transparent transparent;
+  border-radius: 50%;
+  animation: move 3s ease-in-out infinite;
+}
+
+@keyframes move {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(20%, 0);
+  }
+}
+
+.small {
+  font-size: 60%;
+}
+
+.content {
+  position: fixed;
+  top: 40%;
+  left: 45%;
+  transform: translate(-45%, -40%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider-wrapper {
+  font-family: 'Permanent Marker', cursive;
+  color: white;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider {
+  height: 50px;
+  position: fixed;
+  left: 110%;
+  overflow: hidden;
+}
+
+.slider div {
+  color: #08d9d6;
+  height: 50px;
+  margin-bottom: 50px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.slider-text1 {
+  animation: slide 5s linear infinite;
+}
+
+@keyframes slide {
+
+  0% {
+    margin-top: -300px;
+  }
+  5% {
+    margin-top: -200px;
+  }
+  33% {
+    margin-top: -200px;
+  }
+  38% {
+    margin-top: -100px;
+  }
+  66% {
+    margin-top: -100px;
+  }
+  71% {
+    margin-top: 0px;
+  }
+  100% {
+    margin-top: 0px;
+  }
+}
+
+
+
+@media screen and (max-width: 920px) {
+
+  .underlined:after {
+    content: '';
+    position: absolute;
+    bottom: 28px;
+    left: 150px;
+    height: 7px;
+    width: 45%;
+    border: solid 8px #00bbf0;
+    border-color: #00bbf0 transparent transparent transparent;
+    border-radius: 50%;
+    animation: move 3s ease-in-out infinite;
+  }
+}
+
+@media screen and (max-width:689px) {
+
+  .underlined:after {
+    content: '';
+    position: absolute;
+    bottom: 58px;
+    left: 150px;
+    height: 7px;
+    width: 45%;
+    border: solid 8px #00bbf0;
+    border-color: #00bbf0 transparent transparent transparent;
+    border-radius: 50%;
+    animation: move 3s ease-in-out infinite;
+  }
+
+}
+
+
+@media screen and (max-width: 601px) {
+
+  .underlined:after {
+    visibility: hidden;
+  }
+
+  .underlined-2:after {
+    content: '';
+    position: absolute;
+    top: 105px;
+    transform: scaleX(0);
+    border: solid 8px #30e3ca;
+    border-color: #30e3ca transparent transparent transparent;
+    border-radius: 50%;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+
+  .underlined-2:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+    width: 60%;
+    left: 50px;
+  }
+}
